@@ -1,19 +1,18 @@
 {
   "name": "fold-lines",
   "main": "./lib/fold-lines",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Display full-width fold lines, similar to Notepad++ or Komodo editors.",
   "keywords": [
-      "fold",
-      "lines",
-      "Notepad++",
-      "Komodo"
+    "fold",
+    "lines",
+    "Notepad++",
+    "Komodo"
   ],
   "repository": "https://github.com/alysov/fold-lines",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
