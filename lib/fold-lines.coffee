@@ -8,11 +8,11 @@ module.exports = FoldLines =
 
     @subscriptions.add atom.workspace.observeTextEditors (editor) =>
       foldsLayer = editor.displayBuffer.foldsMarkerLayer
-        
+
       # Handle current folds.
       markers = foldsLayer.getMarkers()
       @decorateFold(editor, marker) for marker in markers
-      
+
       # Subscribe to all future folds.
       @subscriptions.add foldsLayer.onDidCreateMarker (marker) =>
         @decorateFold editor, marker
@@ -22,4 +22,4 @@ module.exports = FoldLines =
 
   decorateFold: (editor, marker) ->
     editor.decorateMarker(marker, { type: 'line', class: 'folded' })
-    
+
