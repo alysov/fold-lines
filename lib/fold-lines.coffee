@@ -7,24 +7,19 @@ module.exports = FoldLines =
     @subscriptions = new CompositeDisposable
 
     @subscriptions.add atom.workspace.observeTextEditors (editor) =>
-      buffer = editor.getBuffer()
-        
+      foldsLayer = editor.displayBuffer.foldsMarkerLayer
+
       # Handle current folds.
-      markers = buffer.findMarkers(editor.displayBuffer.getFoldMarkerAttributes())
+      markers = foldsLayer.getMarkers()
       @decorateFold(editor, marker) for marker in markers
-      
+
       # Subscribe to all future folds.
-      @subscriptions.add buffer.onDidCreateMarker (marker) =>
-        @handleBufferMarkerCreated editor, marker
+      @subscriptions.add foldsLayer.onDidCreateMarker (marker) =>
+        @decorateFold editor, marker
 
   deactivate: ->
     @subscriptions.dispose()
-  
-  handleBufferMarkerCreated: (editor, marker) ->
-    props = marker.getProperties()
-    if (props.class == 'fold')
-      @decorateFold editor, marker
 
   decorateFold: (editor, marker) ->
     editor.decorateMarker(marker, { type: 'line', class: 'folded' })
-    
+
