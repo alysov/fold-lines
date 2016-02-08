@@ -22,4 +22,3 @@ module.exports = FoldLines =
 
   decorateFold: (editor, marker) ->
     editor.decorateMarker(marker, { type: 'line', class: 'folded' })
-
