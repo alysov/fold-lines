@@ -1,7 +1,7 @@
 {
   "name": "fold-lines",
   "main": "./lib/fold-lines",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Display full-width fold lines, similar to Notepad++ or Komodo editors.",
   "keywords": [
     "fold",
