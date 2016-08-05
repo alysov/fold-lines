@@ -7,7 +7,7 @@ module.exports = FoldLines =
     @subscriptions = new CompositeDisposable
 
     @subscriptions.add atom.workspace.observeTextEditors (editor) =>
-      foldsLayer = editor.displayBuffer.foldsMarkerLayer
+      foldsLayer = editor.displayLayer.foldsMarkerLayer
 
       # Handle current folds.
       markers = foldsLayer.getMarkers()
