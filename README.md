@@ -9,21 +9,21 @@ line number is marked.  Therefore, to modify the style of the line marker, you c
 like this in your styles.less file:
 
 ```sass
-atom-text-editor .line.folded {
+atom-text-editor.editor .line.folded {
   border-bottom: 1px dashed salmon;  // Mmm.. salmon..
 }
 ```
 
 To remove underline from the line number marker:
 ```sass
-atom-text-editor .line-number.folded {
+atom-text-editor.editor .line-number.folded {
   border-bottom: none;
 }
 ```
 
 To hide default fold marker (which I feel to be redundant while fold lines are visible):
 ```sass
-atom-text-editor .fold-marker {
+atom-text-editor.editor .fold-marker {
   display: none;
 }
 ```
